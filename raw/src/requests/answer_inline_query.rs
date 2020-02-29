@@ -5,6 +5,7 @@ use crate::types::*;
 pub struct AnswerInlineQuery {
     inline_query_id: InlineQueryId,
     results: Vec<InlineQueryResult>,
+    next_offset: Option<String>,
     // TODO: Rest of the fields
 }
 
