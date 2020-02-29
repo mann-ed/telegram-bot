@@ -26,7 +26,7 @@ impl<T> CanAnswerInlineQuery for T
 where
     T: Into<InlineQueryId>,
 {
-    fn answer(self, results: Vec<InlineQueryResult>) -> AnswerInlineQuery {
+    fn answer(self, results: Vec<InlineQueryResult>, next_offset: Option<String>) -> AnswerInlineQuery {
         AnswerInlineQuery::new(self.into(), results)
     }
 }
