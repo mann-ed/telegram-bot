@@ -35,10 +35,12 @@ impl AnswerInlineQuery {
     pub fn new(
         inline_query_id: InlineQueryId,
         results: Vec<InlineQueryResult>,
+        next_offset: Option<String>,
     ) -> AnswerInlineQuery {
         AnswerInlineQuery {
             inline_query_id,
             results,
+            next_offset,
         }
     }
 
