@@ -27,7 +27,7 @@ where
     T: Into<InlineQueryId>,
 {
     fn answer(self, results: Vec<InlineQueryResult>, next_offset: Option<String>) -> AnswerInlineQuery {
-        AnswerInlineQuery::new(self.into(), results)
+        AnswerInlineQuery::new(self.into(), results, next_offset)
     }
 }
 
