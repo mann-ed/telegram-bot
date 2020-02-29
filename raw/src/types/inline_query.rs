@@ -8,6 +8,7 @@ pub struct InlineQuery {
     pub location: Option<Location>,
     pub query: String,
     pub offset: String,
+    pub next_offset: Option<String>,
 }
 
 impl Into<InlineQueryId> for InlineQuery {
