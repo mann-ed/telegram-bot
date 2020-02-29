@@ -19,7 +19,7 @@ impl Request for AnswerInlineQuery {
 }
 
 pub trait CanAnswerInlineQuery {
-    fn answer(self, results: Vec<InlineQueryResult>) -> AnswerInlineQuery;
+    fn answer(self, results: Vec<InlineQueryResult>, next_offset: Option<String>) -> AnswerInlineQuery;
 }
 
 impl<T> CanAnswerInlineQuery for T
