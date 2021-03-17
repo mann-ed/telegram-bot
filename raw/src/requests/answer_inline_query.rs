@@ -29,15 +29,15 @@ impl Request for AnswerInlineQuery {
 }
 
 pub trait CanAnswerInlineQuery {
-    fn answer(self, results: Vec<InlineQueryResult>) -> AnswerInlineQuery;
+    fn answer(self, results: Vec<InlineQueryResult>, next_offset: Option<String> ) -> AnswerInlineQuery;
 }
 
 impl<T> CanAnswerInlineQuery for T
 where
     T: Into<InlineQueryId>,
 {
-    fn answer(self, results: Vec<InlineQueryResult>) -> AnswerInlineQuery {
-        AnswerInlineQuery::new(self.into(), results)
+    fn answer(self, results: Vec<InlineQueryResult>, next_offset: Option<String>) -> AnswerInlineQuery {
+        AnswerInlineQuery::new(self.into(), results, next_offset)
     }
 }
 
@@ -45,13 +45,14 @@ impl AnswerInlineQuery {
     pub fn new(
         inline_query_id: InlineQueryId,
         results: Vec<InlineQueryResult>,
+        next_offset: Option<String>,
     ) -> AnswerInlineQuery {
         AnswerInlineQuery {
             inline_query_id,
             results,
             cache_time: None,
             is_personal: false,
-            next_offset: None,
+            next_offset,
             switch_pm_text: None,
             switch_pm_parameter: None,
         }
