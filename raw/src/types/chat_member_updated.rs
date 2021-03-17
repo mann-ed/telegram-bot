@@ -2,7 +2,6 @@ use crate::types::*;
 
 use serde::Deserialize;
 
-
 #[derive(Debug, Clone, PartialEq, PartialOrd, Eq, Ord, Hash, Deserialize)]
 pub struct ChatMemberUpdated {
     //Chat the user belongs to
