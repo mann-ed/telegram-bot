@@ -39,6 +39,12 @@ pub enum UpdateKind {
     /// A user changed their answer in a non-anonymous poll. Bots receive new votes only in polls that were sent by the bot itself
     #[serde(rename = "poll_answer")]
     PollAnswer(PollAnswer),
+    /// Optional. The bot's chat member status was updated in a chat. For private chats, this update is received only when the bot is blocked or unblocked by the user.
+    #[serde(rename ="my_chat_member")]
+    MyChatMember(ChatMemberUpdated),
+    ///Optional. A chat member's status was updated in a chat. The bot must be an administrator in the chat and must explicitly specify “chat_member” in the list of allowed_updates to receive these updates.
+    #[serde(rename ="chat_member")]
+    ChatMember(ChatMemberUpdated),
     #[doc(hidden)]
     Error(String),
     #[doc(hidden)]

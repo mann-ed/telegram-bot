@@ -12,6 +12,7 @@ pub mod reply_markup;
 pub mod response_parameters;
 pub mod text;
 pub mod update;
+pub mod chat_member_updated;
 
 pub use self::callback_query::*;
 pub use self::chat::*;
@@ -27,3 +28,4 @@ pub use self::reply_markup::*;
 pub use self::response_parameters::*;
 pub use self::text::*;
 pub use self::update::*;
+pub use self::chat_member_updated::*;
